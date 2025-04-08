@@ -1,0 +1,124 @@
+#root {
+  min-height: 100vh;;
+  width: 100%;
+  padding: 2rem;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #c5dcc2;
+  color: #5a855f;
+}
+
+.main {
+  padding: 0.5rem;
+  margin-top: 10px;
+}
+
+.add-container, .newTaskButton {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.newTaskButton {
+  margin-top: 10px;
+  border: 2px dotted #5a855f;
+  background-color: inherit;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: left;
+}
+
+.add-container {
+  background-color: #c5dcc2;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.7s ease, height 0.7s ease;
+}
+
+.add-container.visible {
+  opacity: 1;
+  height: auto; 
+}
+
+/* Input fields */
+.input, .textarea {
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border: 1px solid #5a855f;
+  border-radius: 4px;
+  background-color: inherit;
+  color: #5a855f;
+  font: inherit;
+}
+
+/* Textarea specific styling */
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Buttons */
+.clear-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #d3ecdc;
+  color: #5a855f;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.filter-button {
+  background-color: #91b38e;
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+}
+
+.filter-button.active {
+  background-color: #5a855f; /* darker shade */
+}
+
+.button-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.button-text {
+  font-size: 14px;
+  color: #5a855f;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options-buttons {
+  display: flex;
+  gap: 0.5rem;
+}

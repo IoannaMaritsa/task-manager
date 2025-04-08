@@ -1,0 +1,73 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  /* Close button in the top-right corner */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* Form input fields */
+  .popup-input, .popup-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #5a855f;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .popup-textarea {
+    height: 100px;
+  }
+  
+  /* Style for buttons at the bottom */
+  .popup-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .popup-buttons button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .popup-buttons button:hover {
+    background-color: #45a049;
+  }
+  
+  .popup-buttons button:last-child {
+    background-color: #f44336;
+  }
+  
+  .popup-buttons button:last-child:hover {
+    background-color: #e53935;
+  }
