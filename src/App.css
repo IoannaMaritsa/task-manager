@@ -4,8 +4,9 @@
   padding: 2rem;
   margin: 0 auto;
   text-align: center;
-  background-color: #c5dcc2;
+  background-color: #d3ecdc;
   color: #5a855f;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .main {
@@ -31,8 +32,13 @@
   text-align: left;
 }
 
+.newTaskButton:hover {
+  border: 2px dotted #5a855f;
+  outline: none;
+}
+
 .add-container {
-  background-color: #c5dcc2;
+  background-color: #d3ecdc;
   border-radius: 4px;
   margin-top: 0.5rem;
   display: flex;
@@ -49,7 +55,6 @@
   height: auto; 
 }
 
-/* Input fields */
 .input, .textarea {
   width: 100%;
   padding: 0.5rem;
@@ -61,25 +66,33 @@
   font: inherit;
 }
 
-/* Textarea specific styling */
 .textarea {
   resize: vertical;
   min-height: 80px;
 }
 
-/* Buttons */
 .clear-button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #d3ecdc;
   color: #5a855f;
+  background-color: inherit;
+}
+
+.clear-button:hover {
+  background-color: #c5dcc2;
 }
 
 .button {
+  border: none;
   background-color: #4CAF50;
   color: white;
+}
+
+.button:hover {
+  border: none;
+  background-color: #3f9042;
 }
 
 .filter-buttons {
@@ -89,6 +102,8 @@
 }
 
 .filter-button {
+  outline: none;
+  border: none;
   background-color: #91b38e;
   color: white;
   border-top-left-radius: 12px;
@@ -98,8 +113,13 @@
   cursor: pointer;
 }
 
+.filter-button:hover {
+  border: none;
+  background-color: #769274;
+}
+
 .filter-button.active {
-  background-color: #5a855f; /* darker shade */
+  background-color: #5a855f;
 }
 
 .button-icon {

@@ -6,7 +6,6 @@ const Header = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [text, setText] = useState('');
 
-  // Load text from localStorage when the component mounts
   useEffect(() => {
     const savedText = localStorage.getItem('headerText');
     if (savedText) {
@@ -14,7 +13,6 @@ const Header = () => {
     }
   }, []);
 
-  // Save the text to localStorage whenever it changes
   useEffect(() => {
     if (text) {
       localStorage.setItem('headerText', text);

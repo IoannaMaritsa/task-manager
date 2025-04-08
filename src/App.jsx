@@ -15,7 +15,7 @@ function App() {
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
   const [addingTask, setAddingTask] = useState(false);
-  const [filter, setFilter] = useState('all');  // For tracking filter selection
+  const [filter, setFilter] = useState('all'); 
 
   const ToggleAddTask = () => {
     setAddingTask(!addingTask);
@@ -26,35 +26,33 @@ function App() {
     return Math.max(...tasks.map(task => task.id)) + 1;
   };
 
+  // Create a new task object
   const handleAddTask = () => {
-    // Create a new task object
     if (!title) {
       alert('Please fill in the title')
       return false;
     }
     const newTask = { id: getNextId(tasks), title, description: description ||'-', date, status:'incomplete' };
 
-    // Add it to the task list
     const updatedTasks = [...tasks, newTask];
 
-    // Save updated tasks list to localStorage
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
 
-    // Update state with new tasks list
     setTasks(updatedTasks);
 
-    // Clear input fields after adding the task
     setTitle('');
     setDescription('');
     setDate(() => new Date().toISOString().split('T')[0]);
     setAddingTask(false);
   };
 
+  //remove all tasks
   const clearTasks = () => {
-    localStorage.removeItem('tasks');  // Properly removes the 'tasks' from localStorage
-    setTasks([]);  // Clears the tasks in the state
+    localStorage.removeItem('tasks');
+    setTasks([]);
   };
 
+  //change filter
   const handleFilterChange = (option) => {
     setFilter(option);
   };
@@ -65,15 +63,16 @@ function App() {
     return true;
   });
 
-  // Function to update the status of a task
+  // update the status of a task
   const updateStatus = (id) => {
     const updatedTasks = tasks.map(task =>
       task.id === id ? { ...task, status: task.status === 'complete' ? 'incomplete' : 'complete' } : task
     );
     setTasks(updatedTasks);
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks));  // Save updated tasks to localStorage
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   };
 
+  //delete a specific task
   const deleteTask = (taskId) => {
     const updatedTasks = tasks.filter(task => task.id !== taskId);
   
@@ -82,6 +81,7 @@ function App() {
     setTasks(updatedTasks);
   };
 
+  //edit a specific task
   const updateTask = (taskId, newTitle, newDescription, newDate) => {
     const updatedTasks = tasks.map(task =>
       task.id === taskId
@@ -89,7 +89,7 @@ function App() {
         : task
     );
     setTasks(updatedTasks);
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks)); // Save updated tasks to localStorage
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   };
 
   return (

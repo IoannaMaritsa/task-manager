@@ -11,6 +11,7 @@ const Showcase = ({tasks, updateStatus, updateTask, deleteTask}) => {
   const openPopup = (task) => setSelectedTask(task);
   const closePopup = () => setSelectedTask(null);
 
+  //put labels in the tasks based on the dates
   const groupTasksByDate = () => {
     const grouped = {};
   
@@ -46,17 +47,16 @@ const Showcase = ({tasks, updateStatus, updateTask, deleteTask}) => {
                     key={task.id}
                     type="checkbox"
                     checked
-                    onChange={() => updateStatus(task.id)}  // Toggle status
+                    onChange={() => updateStatus(task.id)}
                     className='checkbox'
                 />
                 )}
 
-                {/* If the task is not completed, render a checkbox to mark as complete */}
                 {task.status !== 'complete' && (
                 <input
                     key={task.id}
                     type="checkbox"
-                    onChange={() => updateStatus(task.id)}  // Toggle status
+                    onChange={() => updateStatus(task.id)}
                     className='checkbox'
                 />
                 )}
